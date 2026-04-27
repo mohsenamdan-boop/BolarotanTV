@@ -641,12 +641,24 @@ function submitOrder(){
   orders.push(order);
   localStorage.setItem('btv2_orders',JSON.stringify(orders));
   updateBadge();
+  sendToSheets(order);
 
   document.getElementById('succ-ref').textContent=ref;
   document.getElementById('wa-link').href='https://wa.me/'+WA_NUM+'?text='+encodeURIComponent(waMsg);
   document.getElementById('orderForm').style.display='none';
   document.getElementById('successScreen').style.display='block';
   window.scrollTo(0,0);
+}
+
+const SHEETS_URL='https://script.google.com/macros/s/AKfycbx-KRIXoL0SKV36KnBtU61h1ZKAVvexIQ3O7actjSoSP-RCQdrLmF1pE1Xx2RhToXhN2Q/exec';
+
+function sendToSheets(order){
+  fetch(SHEETS_URL,{
+    method:'POST',
+    mode:'no-cors',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(order)
+  }).catch(err=>console.log('Sheets error:',err));
 }
 
 function newOrder(){
