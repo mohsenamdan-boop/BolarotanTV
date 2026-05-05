@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>BolarotanTV — Tempahan Batch 2</title>
+<title>BolarotanTV — Tempahan Batch 3</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -176,7 +176,7 @@ const IMG_QR = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAUEB
     <div class="hero-tag">Tempahan Rasmi · BolarotanTV</div>
     <h1>WORLD CUP<br><span>SEPAKTAKRAW</span><br>2026</h1>
     <div class="hero-sub">Kuala Lumpur · 16 Mei 2026</div>
-    <div class="batch-badge">🔥 BATCH KEDUA — KINI DIBUKA!</div>
+    <div class="batch-badge">🔥 BATCH KETIGA — KINI DIBUKA!</div>
   </div>
 
   <div class="products">
@@ -218,47 +218,30 @@ const IMG_QR = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAUEB
       </div>
     </div>
 
-    <div class="section-hd">🎓 Edisi Guru</div>
+    <div class="section-hd">👦 Edisi Kids</div>
 
     <div class="prod-card" onclick="selectAndOrder(2)">
-      <div class="prod-img-wrap"><img id="img-polo-guru" src="" alt="Polo Guru"></div>
+      <div class="prod-img-wrap"><img id="img-jersey-kids" src="" alt="Jersey Kids"></div>
       <div class="prod-body">
-        <div class="prod-edition">Edisi Guru · Polo</div>
-        <div class="prod-name">Jersey Polo Guru</div>
+        <div class="prod-edition">Edisi Kids · Roundneck</div>
+        <div class="prod-name">Jersey Kids Kejohanan</div>
         <div class="prod-feats">
-          <span class="prod-feat">✨ Rekaan Elegan</span>
-          <span class="prod-feat">👔 Kolar Premium</span>
-          <span class="prod-feat">🏫 Profesional</span>
-          <span class="prod-feat">💎 Kualiti Premium</span>
+          <span class="prod-feat">⚡ Quick-Dry</span>
+          <span class="prod-feat">🪶 Ringan & Selesa</span>
+          <span class="prod-feat">🎨 Rekaan Eksklusif</span>
+          <span class="prod-feat">👶 Saiz 20–34</span>
         </div>
         <div class="prod-price-row">
-          <div class="prod-price">RM 55 <small>/ unit</small></div>
+          <div class="prod-price">RM 45 <small>/ unit</small></div>
           <button class="select-btn" onclick="event.stopPropagation();selectAndOrder(2)">TEMPAH →</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="prod-card" onclick="selectAndOrder(3)">
-      <div class="prod-img-wrap"><img id="img-jersey-guru" src="" alt="Jersey Guru"></div>
-      <div class="prod-body">
-        <div class="prod-edition">Edisi Guru · Roundneck</div>
-        <div class="prod-name">Jersey Roundneck Guru</div>
-        <div class="prod-feats">
-          <span class="prod-feat">✨ Rekaan Elegan</span>
-          <span class="prod-feat">🧵 Fabrik Microfibre</span>
-          <span class="prod-feat">🏫 Profesional</span>
-          <span class="prod-feat">💎 Kualiti Premium</span>
-        </div>
-        <div class="prod-price-row">
-          <div class="prod-price">RM 50 <small>/ unit</small></div>
-          <button class="select-btn" onclick="event.stopPropagation();selectAndOrder(3)">TEMPAH →</button>
         </div>
       </div>
     </div>
 
     <div class="postage-info">
       📦 <strong>Penghantaran:</strong> Semenanjung RM8 · Sabah/Sarawak RM16<br>
-      📏 <strong>Tambahan saiz:</strong> 4XL–6XL +RM5 · 7XL–8XL +RM8 · 9XL–10XL +RM10
+      📏 <strong>Tambahan saiz (Dewasa):</strong> 4XL–6XL +RM5 · 7XL–8XL +RM8 · 9XL–10XL +RM10<br>
+      👶 <strong>Saiz Kids:</strong> 20, 22, 24, 26, 28, 30, 32, 34 (tiada tambahan harga)
     </div>
   </div>
 </div>
@@ -420,7 +403,7 @@ const IMG_QR = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAUEB
         <button class="filter-btn" onclick="setFilter('paid',this)">Dibayar</button>
         <button class="filter-btn" onclick="setFilter('Polo',this)">Polo</button>
         <button class="filter-btn" onclick="setFilter('Roundneck',this)">Roundneck</button>
-        <button class="filter-btn" onclick="setFilter('Guru',this)">Guru</button>
+        <button class="filter-btn" onclick="setFilter('Kids',this)">Kids</button>
       </div>
       <div id="order-list"></div>
     </div>
@@ -492,35 +475,33 @@ const IMG_QR = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAUEB
 
 <script>
 const PRODUCTS = [
-  {id:0,name:'Jersey Polo Kejohanan',type:'Polo',edition:'Kejohanan',price:55,imgKey:'polo-kej',guru:false},
-  {id:1,name:'Jersey Roundneck Kejohanan',type:'Roundneck',edition:'Kejohanan',price:50,imgKey:'jersey-kej',guru:false},
-  {id:2,name:'Jersey Polo Guru',type:'Polo',edition:'Guru',price:55,imgKey:'polo-guru',guru:true},
-  {id:3,name:'Jersey Roundneck Guru',type:'Roundneck',edition:'Guru',price:50,imgKey:'jersey-guru',guru:true},
+  {id:0,name:'Jersey Polo Kejohanan',type:'Polo',edition:'Dewasa',price:55,imgKey:'polo-kej',kids:false},
+  {id:1,name:'Jersey Roundneck Kejohanan',type:'Roundneck',edition:'Dewasa',price:50,imgKey:'jersey-kej',kids:false},
+  {id:2,name:'Jersey Kids Kejohanan',type:'Roundneck',edition:'Kids',price:45,imgKey:'jersey-kej',kids:true},
 ];
-const SIZES=['XS','S','M','L','XL','2XL','3XL','4XL','5XL','6XL','7XL','8XL','9XL','10XL'];
+const SIZES_ADULT=['XS','S','M','L','XL','2XL','3XL','4XL','5XL','6XL','7XL','8XL','9XL','10XL'];
+const SIZES_KIDS=['20','22','24','26','28','30','32','34'];
+const SIZES=SIZES_ADULT;
 const SURCHARGE={'4XL':5,'5XL':5,'6XL':5,'7XL':8,'8XL':8,'9XL':10,'10XL':10};
 const POSTAGE={sem:8,sab:16};
 const PAY_LABELS={fpx:'Transfer Bank',tng:'TnG eWallet',duit:'DuitNow QR'};
 const ADMIN_PIN='1234';
 const WA_NUM='60135849214';
 
-let orders=JSON.parse(localStorage.getItem('btv2_orders')||'[]');
+let orders=JSON.parse(localStorage.getItem('btv3_orders')||'[]');
 let selProd=0,selSize='',selQty=1,selPost='sem',selPay='',fil='all';
 
 // IMAGES
 const IMGS={
   'polo-kej':IMG_POLO_KEJ,
   'jersey-kej':IMG_JERSEY_KEJ,
-  'polo-guru':IMG_POLO_GURU,
-  'jersey-guru':IMG_JERSEY_GURU,
   'qr':IMG_QR
 };
 
 function injectImages(){
   document.getElementById('img-polo-kej').src=IMGS['polo-kej'];
   document.getElementById('img-jersey-kej').src=IMGS['jersey-kej'];
-  document.getElementById('img-polo-guru').src=IMGS['polo-guru'];
-  document.getElementById('img-jersey-guru').src=IMGS['jersey-guru'];
+  document.getElementById('img-jersey-kids').src=IMGS['jersey-kej'];
   document.getElementById('qr-img').src=IMGS['qr'];
 }
 
@@ -551,7 +532,9 @@ function selectAndOrder(i){
 function buildSizes(){
   const grid=document.getElementById('size-grid');
   grid.innerHTML='';
-  SIZES.forEach(s=>{
+  const p=PRODUCTS[selProd];
+  const sizeList=p.kids ? SIZES_KIDS : SIZES_ADULT;
+  sizeList.forEach(s=>{
     const d=document.createElement('div');
     d.className='sz-btn';
     d.textContent=s;
@@ -564,7 +547,8 @@ function pickSize(s,el){
   selSize=s;
   document.querySelectorAll('.sz-btn').forEach(b=>b.classList.remove('on'));
   el.classList.add('on');
-  const sc=SURCHARGE[s]||0;
+  const p=PRODUCTS[selProd];
+  const sc=p.kids?0:(SURCHARGE[s]||0);
   const div=document.getElementById('size-surcharge');
   if(sc){div.textContent='+RM'+sc+' (tambahan saiz '+s+')';div.style.display='block';}
   else div.style.display='none';
@@ -595,14 +579,14 @@ function selectPay(p){
 
 function updateSummary(){
   const p=PRODUCTS[selProd];
-  const sc=SURCHARGE[selSize]||0;
+  const sc=p.kids?0:(SURCHARGE[selSize]||0);
   const post=POSTAGE[selPost];
   const unit=p.price+sc;
   const total=unit*selQty+post;
   document.getElementById('sv-prod').textContent=p.name;
   document.getElementById('sv-sz').textContent=selSize||'—';
   document.getElementById('sv-qty').textContent=selQty;
-  document.getElementById('sv-unit').textContent=selSize?'RM '+(p.price+(SURCHARGE[selSize]||0)):'—';
+  document.getElementById('sv-unit').textContent=selSize?'RM '+unit:'—';
   document.getElementById('sv-surch').textContent='RM '+(sc||0);
   document.getElementById('sv-post').textContent='RM '+post;
   document.getElementById('sv-pay').textContent=selPay?PAY_LABELS[selPay]:'—';
@@ -620,11 +604,11 @@ function submitOrder(){
   if(!selPay){alert('Sila pilih kaedah bayaran!');return;}
 
   const p=PRODUCTS[selProd];
-  const sc=SURCHARGE[selSize]||0;
+  const sc=p.kids?0:(SURCHARGE[selSize]||0);
   const post=POSTAGE[selPost];
   const total=(p.price+sc)*selQty+post;
-  const ref='B2-'+Math.random().toString(36).substr(2,6).toUpperCase();
-  const waMsg=`🏆 *TEMPAHAN BATCH 2 - BOLAROTANTV*
+  const ref='B3-'+Math.random().toString(36).substr(2,6).toUpperCase();
+  const waMsg=`🏆 *TEMPAHAN BATCH 3 - BOLAROTANTV*
 
 📋 Ref: *${ref}*
 👤 Nama: ${name}
@@ -639,7 +623,7 @@ function submitOrder(){
 
   const order={ref,name,phone,addr,prod:p.name,edition:p.edition,type:p.type,saiz:selSize,qty:selQty,unit:p.price+sc,post,total,pay:PAY_LABELS[selPay],zon:selPost,date:new Date().toLocaleDateString('ms-MY'),paid:false};
   orders.push(order);
-  localStorage.setItem('btv2_orders',JSON.stringify(orders));
+  localStorage.setItem('btv3_orders',JSON.stringify(orders));
   updateBadge();
   sendToSheets(order);
 
@@ -731,7 +715,7 @@ function renderOrders(){
 function markPaid(i){orders[i].paid=true;save();}
 function delOrder(i){if(confirm('Padam pesanan ini?')){orders.splice(i,1);save();}}
 function waOrder(ref,name,phone){window.open('https://wa.me/6'+phone.replace(/[^0-9]/g,'')+'?text='+encodeURIComponent(`Salam ${name}! Pesanan anda ${ref} telah diterima. Terima kasih! 🙏`),'_blank');}
-function save(){localStorage.setItem('btv2_orders',JSON.stringify(orders));updateBadge();renderOrders();}
+function save(){localStorage.setItem('btv3_orders',JSON.stringify(orders));updateBadge();renderOrders();}
 
 function exportCSV(){
   const rows=[['Ref','Nama','Telefon','Produk','Edisi','Saiz','Qty','Harga Unit','Pos','Jumlah','Bayaran','Zon','Tarikh','Status']];
@@ -739,7 +723,7 @@ function exportCSV(){
   const csv=rows.map(r=>r.map(c=>`"${c}"`).join(',')).join('\n');
   const a=document.createElement('a');
   a.href='data:text/csv;charset=utf-8,\uFEFF'+encodeURIComponent(csv);
-  a.download='BolarotanTV_Batch2.csv';
+  a.download='BolarotanTV_Batch3.csv';
   a.click();
 }
 
